@@ -413,14 +413,6 @@ on property:sys.boot_completed=1
     chown system radio /sys/class/sensors/ssp_sensor/ori_poll_delay
     chown system radio /sys/class/sensors/ssp_sensor/mag_poll_delay
 	
-# icd
-#    exec icd_check
-#    chown system system /dev/icd
-#    chmod 0644 /dev/icd
-#    write /dev/icdr 0
-#    chown system system /dev/icdr
-#    chmod 0644 /dev/icdr
-#    chown system system /dev/tzic
 
 # for datarouter
     chown system system /dev/dun
@@ -511,13 +503,6 @@ on property:ro.uart_debug=0
 service sdcard /system/bin/sdcard /data/media 1023 1023
     class main
 
-# icd
-#service icd /system/bin/icd
-#    class main
-#    user system
-#    group system log
-#    onrestart exec icd_check
-
 service p2p_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -N \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -e/data/misc/wifi/entropy.bin \
@@ -577,10 +562,16 @@ service macloader /system/bin/macloader
     class main
     oneshot
 	
+# AT Distributor for factory test
+service at_distributor /system/bin/at_distributor
+    class main
+    user root
+    group radio log
+	
 service secril-daemon /system/bin/sec-ril
     class main
     user root
-    group radio cache inet misc audio sdcard_rw diag log
+    group radio cache inet misc audio sdcard_rw qcom_diag log
 	
 service qmiproxy /system/bin/qmiproxy
     class main

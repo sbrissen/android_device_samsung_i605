@@ -146,5 +146,8 @@
 	      <item>realcall=on=on</item>
 		  <item>dualmic_enabled=true=false</item>
     </string-array>
+	
+    <!-- If true, adds support for no delay A2DP in Samsung devices -->
+    <bool name="config_noDelayInATwoDP">true</bool>
 
 </resources>

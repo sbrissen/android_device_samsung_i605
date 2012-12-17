@@ -119,7 +119,7 @@ on property:sys.boot_completed=1
     chmod 0775 /data/log
     chmod 0775 /data/anr
 
-# create data/gps for GPS demon
+# create data/gps for GPS daemon
     chown root system /dev/ttySAC1
     chmod 0660 /dev/ttySAC1
     chown root system /sys/class/sec/gps/GPS_PWR_EN/value
@@ -292,6 +292,21 @@ on property:sys.boot_completed=1
     chown system radio /sys/class/power_supply/battery/test_mode
     chown system radio /sys/class/power_supply/battery/wc_status
     chown system radio /sys/class/power_supply/battery/wpc_pin_state
+    
+# CTIA event
+   chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/call
+   chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/video
+   chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/music
+   chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/browser
+   chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/hotspot
+   chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/camera
+   chown system radio /sys/class/power_supply/battery/talk_wcdma
+   chown system radio /sys/class/power_supply/battery/talk_gsm
+   chown system radio /sys/class/power_supply/battery/call
+   chown system radio /sys/class/power_supply/battery/data_call
+   chown gps radio /sys/class/power_supply/battery/gps
+   chown system radio /sys/class/power_supply/battery/wifi
+   chown system radio /sys/class/power_supply/battery/lte
 
 # Thermistor node
     chown radio system /sys/devices/platform/sec-thermistor/temp_adc
@@ -591,6 +606,12 @@ service qc_kickstart /system/bin/qcks s
     class core
     user root
     group radio cache inet misc audio sdcard_rw log
+	
+#start GNSS/Sensor interface daemon
+service gsiff_daemon /system/bin/gsiff_daemon
+    class late_start
+    user system
+    group qcom_oncrpc gps
 
 # sensorhub
 service sensorhubservice /system/bin/sensorhubservice

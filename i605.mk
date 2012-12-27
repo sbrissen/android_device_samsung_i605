@@ -53,7 +53,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_effects.conf:/system/etc/audio_effects.conf
 
 # Gps
-PRODUCT_COPY_FILES += \c
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 # Camera FW

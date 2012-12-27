@@ -35,7 +35,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.smdk4x12.rc:root/init.smdk4x12.rc \
     $(LOCAL_PATH)/init.smdk4x12.usb.rc:root/init.smdk4x12.usb.rc \
     $(LOCAL_PATH)/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc \
-	$(LOCAL_PATH)/init.bt.rc:root/init.bt.rc \
+    $(LOCAL_PATH)/init.bt.rc:root/init.bt.rc \
+    $(LOCAL_PATH)/lpm.rc:root/lpm.rc \
     $(LOCAL_PATH)/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc
 	
 # Prebuilt Modules
@@ -52,7 +53,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_effects.conf:/system/etc/audio_effects.conf
 
 # Gps
-PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \c
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 # Camera FW
@@ -89,7 +90,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
-    Stk
+    Stk \
+    libakm
 
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
@@ -107,6 +109,7 @@ PRODUCT_COPY_FILES += \
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
 
 #Misc

@@ -139,10 +139,8 @@ on property:sys.boot_completed=1
 
 # Camera firmware
     mkdir /data/cfw 0775 system system
-    
-   cp /system/vendor/firmware/SlimISP_ZK.bin /data/cfw/SlimISP_ZK.bin
+
    chown system media /data/cfw/*
-   chgrp media /data/cfw/*
    chmod 0775 /data/cfw/*
 
 

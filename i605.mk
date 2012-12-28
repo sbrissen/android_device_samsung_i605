@@ -38,11 +38,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.bt.rc:root/init.bt.rc \
     $(LOCAL_PATH)/lpm.rc:root/lpm.rc \
     $(LOCAL_PATH)/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc
-	
-# Prebuilt Modules
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/exfat_core.ko:root/lib/modules/exfat_core.ko \
-    $(LOCAL_PATH)/prebuilt/exfat_fs.ko:root/lib/modules/exfat_fs.ko
 
 # Audio
 PRODUCT_COPY_FILES += \

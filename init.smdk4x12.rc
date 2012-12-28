@@ -29,10 +29,6 @@ on early-init
 
 # ko files for FM Radio
     insmod /system/lib/modules/Si4709_driver.ko
-	
-# ko files for exfat
-    insmod /lib/modules/exfat_core.ko
-    insmod /lib/modules/exfat_fs.ko	
 
 on init
     # WFD CES Demo

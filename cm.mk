@@ -1,5 +1,6 @@
 # Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/cdma.mk)
+# We use a different apn-conf to allow VZW/AT&T usage
+#$(call inherit-product, vendor/cm/config/cdma.mk)
 
 # Release name
 PRODUCT_RELEASE_NAME := i605

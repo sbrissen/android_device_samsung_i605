@@ -101,6 +101,10 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/vzwapnlib.xml:system/etc/permissions/vzwapnlib.xml \
 	$(LOCAL_PATH)/configs/com.verizon.hardware.telephony.xml:system/etc/permissions/com.verizon.hardware.telephony.xml
 
+# APN CONF to allow AT&T Usage
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/configs/apns-conf.xml:system/etc/apns-conf.xml
+
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \

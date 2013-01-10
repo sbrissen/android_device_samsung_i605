@@ -36,7 +36,6 @@ public class DeviceSettings extends FragmentActivity {
 
     public static final String SHARED_PREFERENCES_BASENAME = "com.cyanogenmod.settings.device";
     public static final String ACTION_UPDATE_PREFERENCES = "com.cyanogenmod.settings.device.UPDATE";
-    public static final String KEY_HSPA = "hspa";
     public static final String KEY_VIBRATOR_INTENSITY = "vibrator_intensity";
     public static final String KEY_MDNIE_SCENARIO = "mdnie_scenario";
     public static final String KEY_MDNIE_MODE = "mdnie_mode";
@@ -63,8 +62,6 @@ public class DeviceSettings extends FragmentActivity {
         bar.setDisplayHomeAsUpEnabled(true);
 
         mTabsAdapter = new TabsAdapter(this, mViewPager);
-        mTabsAdapter.addTab(bar.newTab().setText(R.string.category_radio_title),
-                RadioFragmentActivity.class, null);
         mTabsAdapter.addTab(bar.newTab().setText(R.string.category_screen_title),
                 ScreenFragmentActivity.class, null);
         mTabsAdapter.addTab(bar.newTab().setText(R.string.category_haptic_title),

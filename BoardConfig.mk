@@ -24,6 +24,9 @@
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
 TARGET_KERNEL_CONFIG := cyanogenmod_i605_defconfig
 
+#Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/i605/bluetooth
+
 # assert
 TARGET_OTA_ASSERT_DEVICE := t0ltevzw,i605,SCH-I605
 

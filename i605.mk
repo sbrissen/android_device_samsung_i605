@@ -35,29 +35,21 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.smdk4x12.rc:root/init.smdk4x12.rc \
     $(LOCAL_PATH)/init.smdk4x12.usb.rc:root/init.smdk4x12.usb.rc \
     $(LOCAL_PATH)/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc \
-	$(LOCAL_PATH)/init.bt.rc:root/init.bt.rc \
+    $(LOCAL_PATH)/init.bt.rc:root/init.bt.rc \
+    $(LOCAL_PATH)/lpm.rc:root/lpm.rc \
     $(LOCAL_PATH)/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc
-	
-# Prebuilt Modules
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/exfat_core.ko:root/lib/modules/exfat_core.ko \
-    $(LOCAL_PATH)/prebuilt/exfat_fs.ko:root/lib/modules/exfat_fs.ko
-
-# Audio
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/configs/tinyucm.conf:system/etc/tinyucm.conf \
-    $(LOCAL_PATH)/configs/default_gain.conf:system/etc/default_gain.conf \
-    $(LOCAL_PATH)/configs/Volume.db:system/etc/Volume.db \
-    $(LOCAL_PATH)/configs/audio_effects.conf:/system/etc/audio_effects.conf
-
-# Gps
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 # Camera FW
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/80cfw:system/etc/init.d/80cfw
+
+# Audio
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/t0ltevzw
+
+# Gps
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 # Product specific Packages
 PRODUCT_PACKAGES += \
@@ -89,7 +81,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
-    Stk
+    Stk \
+    libakm
 
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 

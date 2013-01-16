@@ -1,7 +1,7 @@
 import init.smdk4x12.usb.rc
 import init.bt.rc
 
-loglevel 9
+loglevel 3
 
 on init
     mkdir /mnt/shell/emulated 0700 shell shell
@@ -33,10 +33,6 @@ on init
     mkdir /efs 0771 radio system
     mkdir /tombstones
 
-# ko files for FM Radio
-    insmod /system/lib/modules/Si4709_driver.ko
-
-on init
     # WFD CES Demo
     chmod 0666 /dev/graphics/fb5
 
@@ -577,12 +573,6 @@ service iprenew_bnep0 /system/bin/dhcpcd -n
 service macloader /system/bin/macloader
     class main
     oneshot
-	
-# AT Distributor for factory test
-service at_distributor /system/bin/at_distributor
-    class main
-    user root
-    group radio log
 	
 service secril-daemon /system/bin/sec-ril
     class main

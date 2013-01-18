@@ -22,6 +22,11 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Init files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.smdk4x12:root/fstab.smdk4x12
+
+PRODUCT_PACKAGES += \
+    VZWAPNLib \
+    vzwapnpermission \
+    VZWAPNService
 	
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/vzwapnlib.xml:system/etc/permissions/vzwapnlib.xml \

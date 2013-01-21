@@ -19,9 +19,6 @@
 
 -include device/samsung/t0ltecdma/BoardCommonConfig.mk
 
-#Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/i605/bluetooth
-
 # assert
 TARGET_OTA_ASSERT_DEVICE := t0ltevzw,i605,SCH-I605
 
